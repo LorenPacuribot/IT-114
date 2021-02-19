@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<conio.h> 
+
+void main() 
+    { 
+    int age; 
+    char name[50]; // or *name clrscr(); 
+    
+    printf("\n Type the Name of the candidate: \n"); 
+    gets(name); 
+    
+    printf("\n Enter The Age : "); 
+    scanf("%d",&age); 
+    
+    if(age>=18) 
+    { 
+    printf(" %s is Eligible for Vote",name); 
+    }
+    else if(age ==0)
+    {
+    printf("Invalid age, Please try again ",name );
+    }
+    else
+    { 
+    printf(" %s is Not Eligible for Vote",name);
+    } 
+    getch(); 
+    }
