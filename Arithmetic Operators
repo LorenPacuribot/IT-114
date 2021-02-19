@@ -1,0 +1,24 @@
+// arithmetic operators
+#include<stdio.h>
+int main()
+{
+    int a, b;
+    int addition, subtraction, multiplication,division;
+   
+    printf("Input Integer:");
+    scanf("%d" ,&a);
+    printf("Input Integer:");
+    scanf("%d" ,&b);
+    
+    addition= a+b;
+    subtraction= a-b;
+    multiplication= a*b;
+    division= a/b;
+    
+    printf("\nResults:\n\n");
+    printf("ADD = %d\n", addition);
+    printf("MUL = %d\n", multiplication);
+    printf("DIV = %d\n", division );
+    printf("SUB = %d\n", subtraction);
+    return 0;
+}
