@@ -1,0 +1,42 @@
+#include<stdio.h> 
+// functions declaration
+     int add(int n1, int n2, int n3, int n4, int n5); 
+     int average(int n1, int n2,int n3, int n4, int n5); 
+    
+    
+     // main function 
+        int main() 
+        { 
+        int sub1, sub2, sub3, sub4, sub5;
+        printf("Enter grade for subject 1: ");
+         scanf("%d" , &sub1);
+        printf("Enter grade for subject 2: ");
+         scanf("%d" , &sub2);
+        printf("Enter grade for subject 3: ");
+         scanf("%d" , &sub3);
+        printf("Enter grade for subject 4: ");
+         scanf("%d" , &sub4);
+        printf("Enter grade for subject 5: ");
+         scanf("%d" , &sub5);
+        printf(" \nSUM of 5 grades:%d\n",add(sub1, sub2, sub3, sub4, sub5));
+        printf("AVERAGE of 5 grades: %d\n", average (sub1, sub2, sub3, sub4, sub5));
+       
+         return 0;
+         } 
+        
+        // function to add 5 grades 
+        int add(int n1, int n2, int n3, int n4, int n5)
+         { 
+        int result;
+        result = n1 + n2 + n3 + n4 + n5;
+        return result; 
+         } 
+        // function to average 5 grades 
+        int average(int n1, int n2, int n3, int n4, int n5) 
+         { 
+        int sum, result; 
+        sum =  n1 + n2 + n3 + n4 + n5 ;
+        result =sum/5; 
+        return result; 
+         } 
+       
