@@ -1,0 +1,61 @@
+#include<stdio.h> 
+#include<stdlib.h>
+
+// functions declaration
+     float Information (char sex, int age, int ID);
+     int Elligibility (int age);
+
+    
+     // main function 
+     void main()
+{ 
+        int age, ID;
+        char sex;
+        
+        printf(" \n User Information\n");
+        
+        printf("Input your Sex (M/F): ");
+        scanf("%c" , &sex);
+        
+        printf("Input your ID number: ");
+         scanf("%d" , &ID);
+         
+        printf("Enter your Age: ");
+         scanf("%d" , &age);
+        
+      
+        Information( sex,  age,  ID);
+        Elligibility (age);
+
+     
+ } 
+        
+        // function to input user information 
+           float Information (char sex, int age, int ID)
+ {
+        printf("Sex :%c \n",sex);
+       
+        printf("ID number:%d \n",ID);
+     
+        printf("Age:%d \n",age);
+} 
+         
+        // function to access elligibility 
+       int Elligibility (int age)
+       {
+        if(age>=18) 
+    { 
+    printf(" is Eligible for Vote"); 
+    }
+    else if(age ==0)
+    {
+    printf("Invalid age, Please try again " );
+    }
+    else
+    { 
+    printf(" is Not Eligible for Vote \n" );
+    }
+       }
+ 
+    
+    
