@@ -1,0 +1,86 @@
+/*Write a code where the user input and print 2 sets of student data in two separate files.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+  
+int main()
+{
+
+    FILE *fptr;
+   char fname1[20]="student1.txt";
+   char fname2[20]="student2.txt";
+   char name[1000], name2[1000];
+   int id,m,s,e;
+   int id2,m2,s2,e2;
+   int sum,ave;
+   
+// first student data
+
+   fptr=fopen(fname1,"w");	
+
+   if(fptr==NULL)
+   {
+      printf(" Error in opening file!");
+      return 0;
+   }
+
+  printf("Student Name:");
+  scanf("%s",name);
+  printf("ID Number:");
+  scanf("%d",&id);
+  printf("Math Grade:");
+  scanf("%d",&m);
+  printf("Science Grade:");
+  scanf("%d",&s);
+  printf("English Grade:");
+  scanf("%d",&e);
+ 
+
+
+ fprintf(fptr,"\nStudent Name: %s",name);
+ fprintf(fptr,"\nID Number: %d",id);
+ fprintf(fptr,"\nMath Grade: %d",m);
+ fprintf(fptr,"\nScience Grade: %d",s);
+ fprintf(fptr,"\nEnglish Grade: %d",e);
+ sum=m+s+e;
+ fprintf(fptr,"\nTotal Grade: %d",sum);
+ ave=(m+s+e)/3;
+ fprintf(fptr,"\nGrade Average: %d",ave);
+ fclose(fptr);
+
+
+// second student data  
+
+    fptr=fopen(fname2,"w+");	
+    if(fptr==NULL)
+   {
+      printf(" Error in opening file!");
+      return 0;
+   }
+
+  printf("\nStudent Name:");
+  scanf("%s",name2);
+  printf("ID Number:");
+  scanf("%d",&id2);
+  printf("Math Grade:");
+  scanf("%d",&m2);
+  printf("Science Grade:");
+  scanf("%d",&s2);
+  printf("English Grade:");
+  scanf("%d",&e2);
+
+
+ fprintf(fptr,"\nStudent Name: %s",name2);
+ fprintf(fptr,"\nID Number: %d",id2);
+ fprintf(fptr,"\nMath Grade: %d",m2);
+ fprintf(fptr,"\nScience Grade: %d",s2);
+ fprintf(fptr,"\nEnglish Grade: %d",e2);
+  sum=m2+s2+e2;
+ fprintf(fptr,"\nTotal Grade: %d",sum);
+  ave=(m2+s2+e2)/3;
+ fprintf(fptr,"\nGrade Average: %d",ave);
+  fclose(fptr);
+
+   return 0;
+}
