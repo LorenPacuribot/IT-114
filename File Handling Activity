@@ -1,0 +1,45 @@
+/*[program that append multiple lines in a text file]
++ User must input how many lines to be append
++ if the text file doesn't exist, the program will create the text file*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    FILE * text;
+    char char1[100], char2[100], char3;
+    int line, i;
+
+    printf("Input the file location : ");
+    scanf("%s", &char1);
+
+    text = fopen (char1, "a");
+    if (text == NULL) {
+        printf("Null");
+        exit(1);
+    }
+
+    printf("Input how many lines to be appended : ");
+    scanf(" %d", &line);
+
+    //scan and counts text appended
+    for (i = 0; i < line; i++) {
+        scanf("%s", &char2);
+        fprintf(text, "%s\n", &char2);
+    }
+    fclose(text); //close file pointer
+
+    //open again
+    text = fopen (char1, "r");
+    char3 = fgetc(text);
+
+    printf("\n\nInside of the %s\n", char1);
+    while (char3 != EOF) {
+        printf("%c", char3);
+        char3 = fgetc(text);
+    }
+
+    fclose(text);
+    return 0;
+}
